@@ -9,7 +9,7 @@
     Design = require("./models/design");
     paypal = require("paypal-rest-sdk");
 
-mongoose.connect("mongodb://localhost/simon_designs", {useMongoClient: true});
+mongoose.connect("mongodb://test:test@ds231228.mlab.com:31228/simondesigns", {useMongoClient: true});
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(require("express-session")({
@@ -64,15 +64,7 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/designs/:id", (req, res) => {
-  Design.findById(req.params.id, (err, foundDesign) => {
-    if (err){
-      res.redirect("/");
-    } else{
-      res.render("showPage", {design: foundDesign});
-    }
-  });
-});
+
 
 
 app.get("/designs", (req, res) => {
@@ -128,6 +120,16 @@ app.post("/requests", (req, res) => {
 
   });
 
+});
+
+app.get("/designs/:id", (req, res) => {
+  Design.findById(req.params.id, (err, foundDesign) => {
+    if (err){
+      res.redirect("/");
+    } else{
+      res.render("showPage", {design: foundDesign});
+    }
+  });
 });
 
 
