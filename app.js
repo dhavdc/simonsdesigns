@@ -171,6 +171,7 @@ app.post('/login', (req, res) => passport.authenticate('local', { successRedirec
 
 
 
+var port = process.env.PORT || 8080;
 
 //Server Listen
 app.listen(port, function() {
