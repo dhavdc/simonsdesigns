@@ -173,4 +173,4 @@ app.post('/login', (req, res) => passport.authenticate('local', { successRedirec
 
 
 //Server Listen
-app.listen(3000, () => console.log("Server has started!"));
+app.listen(process.env.port, process.env.IP);
