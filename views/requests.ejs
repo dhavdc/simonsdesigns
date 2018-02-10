@@ -1,0 +1,36 @@
+<% include partials/header %>
+
+
+<h1 class="display-3 align-center requestsTitle">Request A Design</h1>
+
+
+<div class="container">
+    <div class="requestsContainer">
+      <form action="/requests" method="POST" >
+      <div class="form-group">
+        <label for="exampleInputEmail1">Instagram</label>
+        <input name="email" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
+        <small id="emailHelp" class="form-text text-muted">You will be DM'd on Instagram</small>
+      </div>
+      <label for="selectMenu">Select Design</label>
+      <div class="form-group">
+        <select name="type" class="custom-select custom-select-md" id="selectMenu">
+          <option selected>Choose A Design</option>
+          <option value="Logo">Logo</option>
+          <option value="Banner">Banner</option>
+          <option value="Thumbnail">Thumbnail</option>
+          <option value="Edit">Edit</option>
+          <option value="Other">Other</option>
+
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Add information</label>
+        <textarea name="additional" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+  </div>
+</div>
+<% include partials/footer %>

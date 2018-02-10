@@ -1,0 +1,122 @@
+.designImage{
+  width: 100%;
+  height: 100%;
+}
+.designShowContainer{
+  text-align: center;
+  padding-top: 150px;
+}
+.littlePadding{
+  margin-top: 10px;
+}
+.align-center{
+  text-align: center;
+}
+.btn-danger{
+  margin: 0 auto;
+}
+.img-thumbnail{
+  width: 100%;
+  height: 100%;
+}
+.alert{
+  margin-top: 65px;
+}
+.img-center{
+  margin: 0 auto;
+}
+.social-container{
+  padding-top: 60px;
+}
+.social-links{
+  margin-top: -40px;
+}
+.card-body-center{
+  margin: 0 auto;
+}
+.col-md-4{
+  padding-top: 80px;
+}
+
+.requestsTitle{
+  margin-top: 150px;
+}
+
+.designsContainer{
+  padding-top: 20px;
+  padding-bottom: 70px;
+}
+.requestsContainer{
+  margin-top: 80px;
+  padding: 20px 20px 20px 20px;
+  background-color: white;
+}
+
+.fullrequestsContainer{
+  padding-bottom: 70px;
+}
+
+.loginContainer{
+  margin-top: 80px;
+  background-color: white;
+  padding: 20px 20px 20px 20px;
+
+
+}
+
+.landingContainer{
+  padding-top: 90px;
+}
+
+.borderDiv{
+  border: 1px solid red;
+}
+.card{
+  background-color: transparent;
+  border: none;
+
+}
+
+.idInput{
+  display:none;
+}
+
+.card-body p{
+  text-align: center;
+}
+.card-body a{
+  text-align: center;
+  margin: 0 auto;
+  width: 100%
+}
+.card-body h5{
+  text-align: center;
+}
+html{
+  min-height: 100%;
+}
+hr{
+  border-top: 2.5px solid rgba(0,0,0,.1);
+}
+body{
+  font-family: 'Lato', sans-serif !important;
+
+  min-height: 100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006cb5+0,4cf0ff+100 */
+  background: #006cb5; /* Old browsers */
+  background: -moz-linear-gradient(top, #006cb5 0%, #4cf0ff 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #006cb5 0%,#4cf0ff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #006cb5 0%,#4cf0ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006cb5', endColorstr='#4cf0ff',GradientType=0 ); /* IE6-9 */
+
+}
+
+.jumbotron{
+  background-color: transparent;
+}
+
+.navbar-header .navbar-brand {
+  height: 1000px;
+}
+.navbar-nav > li > a {padding-top:2px !important; padding-bottom:2px !important;}
+.navbar {min-height:15px !important}

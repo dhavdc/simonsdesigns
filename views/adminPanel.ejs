@@ -1,0 +1,25 @@
+<% include partials/header %>
+
+<div class="container fullrequestsContainer">
+
+  <% Request.forEach(function (request){ %>
+    <div class="container requestsContainer">
+      <h1 class="align-center">Email: <%=request.email%></h1>
+      <h2 class="align-center">Type: <%=request.type%></h1>
+      <h2 class="align-center">Additional Comments:</h2>
+      <p class="align-center"><%=request.additional%></p>
+      <form method="post" action="/delete/<%=request._id%>?_method=PUT">
+        <textarea class="idInput" type="text" name="id"><%=Request.id%></textarea>
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+    </div>
+
+  <% }); %>
+
+</div>
+
+
+
+
+
+<% include partials/footer %>

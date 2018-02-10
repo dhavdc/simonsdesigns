@@ -1,0 +1,27 @@
+<% include partials/header %>
+
+<div class="container designsContainer">
+
+  <% var counter = 0; %>
+
+  <div class="row">
+
+    <% Design.forEach(function (design){ %>
+      <%counter++%>
+
+      <div class="col-md-4 col-sm-6">
+      <div class="card">
+        <div class="img-thumbnail text-center">
+          <img class="designImage" src="<%=design.image%>">
+          <a href="/designs/<%=design._id%>" class="btn btn-info littlePadding">View Design</a>
+        </div>
+      </div>
+      </div>
+      <%  if (counter % 3 === 0){ %>
+          <div class="w-100"></div>
+      <%  } %>
+     <% }); %>
+  </div>
+</div>
+
+<% include partials/footer %>
