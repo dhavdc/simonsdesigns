@@ -43,17 +43,18 @@
 }
 
 .designsContainer{
-  padding-top: 20px;
-  padding-bottom: 70px;
+  padding-top: 2%;
+  padding-bottom: 5%;
 }
 .requestsContainer{
-  margin-top: 80px;
+  margin-bottom: 5%;
   padding: 20px 20px 20px 20px;
   background-color: white;
 }
 
 .fullrequestsContainer{
-  padding-bottom: 70px;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .loginContainer{
@@ -65,7 +66,7 @@
 }
 
 .landingContainer{
-  padding-top: 90px;
+  padding-top: 5%;
 }
 
 .borderDiv{
