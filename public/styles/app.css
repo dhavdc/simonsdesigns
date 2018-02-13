@@ -9,6 +9,9 @@
 .littlePadding{
   margin-top: 10px;
 }
+.margin-center{
+  margin: 0 auto;
+}
 .full-width{
   width: 100%;
   height: 100px;
