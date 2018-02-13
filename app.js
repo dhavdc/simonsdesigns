@@ -7,10 +7,12 @@
     User = require("./models/user");
     Request = require("./models/request");
     Design = require("./models/design");
+    fileUpload = require('express-fileupload');
+
 
 //mongoose.connect("mongodb://test:test@ds231228.mlab.com:31228/simondesigns", {useMongoClient: true}); //PRODUCT
 mongoose.connect("mongodb://localhost/simon_designs", {useMongoClient: true}); //LOCAL testing
-
+app.use(fileUpload());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(require("express-session")({
@@ -32,7 +34,6 @@ app.set("view engine", "ejs");
 // User.register(newUser, "scorpion1", (err, user) => {
 //   if (err){
 //     console.log(err)
-//     return "nigga"
 //   }
 //   passport.authenticate("local")
 // })
@@ -70,6 +71,32 @@ app.get("/designs", (req, res) => {
     }
   });
 });
+
+app.post("/designs/upload", (req, res) => {
+  if (!req.files) {
+    return res.status(400).send('No files were uploaded.');
+  }
+  var designFile = req.files.designFile;
+  var designName = req.body.name;
+  designFile.mv('public/images/' + req.files.designFile.name, function(err) {
+    if (err){
+      return res.status(500).send(err);
+    }
+    Design.create(
+      {
+        name: designName,
+        image: "/images/" + req.files.designFile.name
+      },
+      function(err, design){
+        if (err){
+          console.log(err);
+        }
+        else{
+          res.redirect("/designs");
+        }
+      });
+  });
+})
 
 app.get("/designs/:id", (req, res) => {
   Design.findById(req.params.id, (err, foundDesign) => {
@@ -142,6 +169,10 @@ app.get("/admin/requests", isLoggedIn, (req, res) => {
       res.render("adminPanel", {Request: allReq});
     }
   });
+});
+
+app.get("/admin/adddesign", isLoggedIn, (req, res) => {
+  res.render("addDesign");
 });
 
 app.post('/login', (req, res) => passport.authenticate('local', { successRedirect: '/admin/requests', failureRedirect: '/admin/login', })(req, res));

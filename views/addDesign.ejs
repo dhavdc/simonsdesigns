@@ -1,0 +1,39 @@
+<% include partials/header %>
+
+<div class="container">
+    <div class="addDesignContainer">
+      <form encType="multipart/form-data" ref='uploadForm' action="/designs/upload" method="POST" >
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Name of design</label>
+        <textarea name="name" class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+      </div>
+      <div class=form-group>
+        <label for="exampleFormControlTextarea1">Design</label>
+        <input type="file" name="designFile">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% include partials/footer %>
