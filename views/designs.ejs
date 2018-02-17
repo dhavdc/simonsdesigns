@@ -13,7 +13,14 @@
       <div class="card">
         <div class="img-thumbnail text-center">
           <img class="designImage" src="<%=design.image%>">
+          <div class="buttons">
           <a href="/designs/<%=design._id%>" class="btn btn-info littlePadding">View Design</a>
+          <% if (Login){ %>
+            <form action="/designs/delete/<%=design._id%>" method="post">
+              <button type="submit" class="btn btn-danger littlePadding">Delete</button>
+            </form>
+          <% } %>
+          </div>
         </div>
       </div>
       </div>

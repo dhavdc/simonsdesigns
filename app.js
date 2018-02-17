@@ -67,12 +67,17 @@ app.get("/designs", (req, res) => {
     if (err){
       console.log(err);
     } else{
-      res.render("designs", {Design: allDesigns});
+      if (req.user){
+        res.render("designs", {Design: allDesigns, Login: true});
+      }
+      else{
+        res.render("designs", {Design: allDesigns, Login: false});
+      }
     }
   });
 });
 
-app.post("/designs/upload", (req, res) => {
+app.post("/designs/upload", isLoggedIn, (req, res) => {
   if (!req.files) {
     return res.status(400).send('No files were uploaded.');
   }
@@ -97,6 +102,17 @@ app.post("/designs/upload", (req, res) => {
       });
   });
 })
+
+app.post("/designs/delete/:id", (req, res) => {
+  Design.remove({ _id: req.params.id }, function(err) {
+    if (!err) {
+            res.redirect("/designs")
+    }
+    else {
+            res.send("Error lmao tell Daniel");
+    }
+  });
+});
 
 app.get("/designs/:id", (req, res) => {
   Design.findById(req.params.id, (err, foundDesign) => {
@@ -152,6 +168,14 @@ function isLoggedIn(req, res, next){
     return next();
   }
   res.redirect("/admin/login");
+}
+function isLoggedInDesigns(req, res){
+  if (req.isAuthenticated()){
+    res.render("designs", {Login: true});
+  }
+  else{
+    res.render("designs");
+  }
 }
 
 

@@ -6,6 +6,9 @@
   text-align: center;
   padding-top: 150px;
 }
+.inline{
+  display: inline-block;
+}
 .littlePadding{
   margin-top: 10px;
 }
