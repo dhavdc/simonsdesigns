@@ -10,8 +10,8 @@
     fileUpload = require('express-fileupload');
 
 
-mongoose.connect("mongodb://test:test@ds231228.mlab.com:31228/simondesigns", {useMongoClient: true}); //PRODUCT
-//mongoose.connect("mongodb://localhost/simon_designs", {useMongoClient: true}); //LOCAL testing
+//mongoose.connect("mongodb://test:test@ds231228.mlab.com:31228/simondesigns", {useMongoClient: true}); //PRODUCT
+mongoose.connect("mongodb://localhost/simon_designs", {useMongoClient: true}); //LOCAL testing
 app.use(fileUpload());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
