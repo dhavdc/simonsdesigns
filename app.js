@@ -1,24 +1,29 @@
   var express = require("express"),
-    app = express(),
-    bodyParser = require("body-parser"),
-    mongoose = require("mongoose"),
-    passport = require("passport"),
-    LocalStrategy = require("passport-local"),
-    User = require("./models/user"),
-    Request = require("./models/request"),
-    Design = require("./models/design"),
-    fileUpload = require('express-fileupload');
+      app = express(),
+      bodyParser = require("body-parser"),
+      mongoose = require("mongoose"),
+      passport = require("passport"),
+      LocalStrategy = require("passport-local"),
+      User = require("./models/user"),
+      Request = require("./models/request"),
+      Design = require("./models/design"),
+      fileUpload = require('express-fileupload'),
+      favicon = require('serve-favicon');
+      path = require('path')
+
+
 
 var designRoutes = require("./routes/designs"),
     requestRoutes = require("./routes/requests"),
     adminRoutes = require("./routes/admin");
 
 
-mongoose.connect("mongodb://test:test@ds231228.mlab.com:31228/simondesigns", {useMongoClient: true}); //PRODUCT
-//mongoose.connect("mongodb://localhost/simon_designs", {useMongoClient: true}); //LOCAL testing
+//mongoose.connect("mongodb://test:test@ds231228.mlab.com:31228/simondesigns", {useMongoClient: true}); //PRODUCT
+mongoose.connect("mongodb://localhost/simon_designs", {useMongoClient: true}); //LOCAL testing
 app.use(fileUpload());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(require("express-session")({
   secret: "skrt",
   resave: false,
