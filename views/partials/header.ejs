@@ -26,5 +26,8 @@
             <a class="nav-link align-center" href="/requests">Requests<span class="sr-only">(current)</span></a>
           </li>
         </ul>
+        <% if (typeof Login !== "undefined" && Login){ %>
+          <a href="/logout" class="btn btn-primary" type="submit">Logout</a>
+        <% } %>
       </div>
     </nav>

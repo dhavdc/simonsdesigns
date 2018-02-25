@@ -65,33 +65,19 @@ app.set("view engine", "ejs");
 //       console.log(design);
 //     }
 //   });
-
-
 //Get Routes
 app.get("/", (req, res) => {
   res.render("index");
 });
 
-//Design ROUTES
-
-
-//Request ROUTES
-
-
-
-
-///AUTH FUNCTION\\\
-
-
-
-
-//AUTH ROUTES
-
-
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
 
 var port = process.env.PORT || 8080;
 
 //Server Listen
 app.listen(port, function() {
-    console.log('Our app is running on http://localhost:' + port);
+    console.log('App is running on http://localhost:' + port);
 });
