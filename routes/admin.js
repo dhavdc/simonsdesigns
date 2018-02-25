@@ -21,13 +21,13 @@ router.get("/admin/requests", isLoggedIn, (req, res) => {
     if (err){
       console.log(err);
     } else{
-      res.render("adminPanel", {Request: allReq});
+      res.render("adminPanel", {Request: allReq, Login: true});
     }
   });
 });
 
 router.get("/admin/adddesign", isLoggedIn, (req, res) => {
-  res.render("addDesign");
+  res.render("addDesign", {Login: true});
 });
 
 router.post('/login', (req, res) => passport.authenticate('local',
