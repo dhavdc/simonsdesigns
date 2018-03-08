@@ -42,8 +42,8 @@ app.set("view engine", "ejs");
 
 //Add new user to admin
 
-// var newUser = new User({username: "simon"});
-// User.register(newUser, "scorpion1", (err, user) => {
+// var newUser = new User({username: "username"});
+// User.register(newUser, "password", (err, user) => {
 //   if (err){
 //     console.log(err)
 //   }
